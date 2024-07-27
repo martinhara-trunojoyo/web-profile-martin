@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .glow-text {
+            color: #88e1e3; /* Warna hijau telur asin */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-100 min-h-screen flex items-center justify-center">
+    <div class="max-w-4xl mx-auto p-6 bg-gray-800 rounded-lg shadow-lg text-center">
+        <img src="https://media.licdn.com/dms/image/D5603AQG2jp12VdrGKg/profile-displayphoto-shrink_400_400/0/1709345647812?e=1727308800&v=beta&t=pFASHv-Ttesf2cPxtSmFwU_g2Zn7kKRURoNQQhefSf0"
+            alt="Your Name" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-gray-700 shadow-lg">
+        <h1 class="text-3xl md:text-5xl glow-text font-bold mb-4">Imanuel Martin J. Harahap</h1>
+        <p class="text-base md:text-lg text-gray-400 mb-6">Web & Mobile Dev | Artificial Intelligence Enthusiast</p>
+        <p class="text-sm md:text-base text-gray-300 mb-8">Saya adalah seorang Asisten Praktikum di Jurusan Teknik Informatika dengan minat besar dalam pengembangan web dan mobile. Saat ini, saya sedang mendalami bidang AI, untuk menambah keahlian teknis dalam dunia teknologi informasi. Dengan latar belakang yang kuat dan ketertarikan yang mendalam pada inovasi teknologi, saya berperan aktif dalam mendukung kegiatan praktikum di jurusan dan terus berupaya mengembangkan pengetahuan serta kemampuan saya di bidang-bidang tersebut.</p>
+        <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+            <a href="#portfolio" class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded shadow">Portfolio</a>
+            <button id="contact-button" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded shadow">Kontak</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="contact-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center hidden">
+        <div class="bg-gray-800 rounded-lg shadow-lg p-6 max-w-sm w-full text-center">
+            <h2 class="text-2xl font-bold mb-4">Informasi Kontak</h2>
+            <div class="flex items-center justify-center mb-2">
+                <i class="fas fa-envelope mr-2 text-green-400"></i>
+                <p class="text-gray-300">Email: imanuelmrtn@gmail.com</p>
+            </div>
+            <div class="flex items-center justify-center mb-2">
+                <i class="fas fa-phone-alt mr-2 text-green-400"></i>
+                <p class="text-gray-300">Phone: +62 896 0993 1734</p>
+            </div>
+            <div class="flex items-center justify-center mb-2">
+                <i class="fab fa-instagram mr-2 text-green-400"></i>
+                <p class="text-gray-300">Instagram: @martinharrahap</p>
+            </div>
+            <div class="flex items-center justify-center mb-2">
+                <i class="fab fa-linkedin mr-2 text-green-400"></i>
+                <p class="text-gray-300">LinkedIn: martinharahap</p>
+            </div>
+            <div class="flex items-center justify-center mb-2">
+                <i class="fab fa-github mr-2 text-green-400"></i>
+                <p class="text-gray-300">Github: martinhara-trunojoyo</p>
+            </div>
+            <div class="flex items-center justify-center mb-2">
+                <i class="fab fa-tiktok mr-2 text-green-400"></i>
+                <p class="text-gray-300">TikTok: martincode</p>
+            </div>
+            <button id="close-modal" class="mt-4 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded shadow">Tutup</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contact-button').addEventListener('click', function () {
+            document.getElementById('contact-modal').classList.remove('hidden');
+        });
+
+        document.getElementById('close-modal').addEventListener('click', function () {
+            document.getElementById('contact-modal').classList.add('hidden');
+        });
+
+        // Close the modal when clicking outside of it
+        window.addEventListener('click', function (event) {
+            if (event.target === document.getElementById('contact-modal')) {
+                document.getElementById('contact-modal').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
